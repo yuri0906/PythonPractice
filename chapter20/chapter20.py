@@ -14,11 +14,11 @@ class Scraper:
         response = urllib.request.urlopen(self.site)
         html = response.read()
         soup = BeautifulSoup(html, 'html.parser')
+
         with open("output.txt", "w") as f:
             for tag in soup.find_all('a'):
                 url = tag.get('href')
-                if url and 'html' in url:
-                    print("\n" + url)
+                if url and 'articles' in url:
                     f.write(url + "\n")
 
 Scraper('https://news.google.com/').scrape()

@@ -1,3 +1,5 @@
+#ハングマンというゲームを関数で実装
+
 # coding: UTF-8
 
 import random
@@ -32,4 +34,5 @@ def hangman():
         print('\n'.join(stages[0: wrong_guesses]))
         print('あなたの負け！正解は、 {}'.format(word))
 
-hangman()
+if __name__ == "__main__":
+    hangman()
